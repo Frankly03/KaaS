@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: kaas_backend
+    ports:
+      - "${PORT:-8000}:8000"
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./storage:/app/storage
+      - ./kaas.db:/app/kaas.db
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=sqlite:////app/kaas.db # Use absolute path inside container
+
+  frontend:
+    build: ./frontend
+    container_name: kaas_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes: {}
