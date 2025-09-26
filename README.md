@@ -12,7 +12,7 @@ The system is composed of three main services orchestrated by Docker Compose:
 2.  **Frontend (React)**: A simple web UI for uploading files and chatting with your documents.
 3.  **Chroma (Vector DB)**: Runs as a persistent local vector store using a Docker volume.
    
-<pre> ```text +------------------+ +------------------+ | Frontend UI |----->| Backend API | | (React @ :3000) | | (FastAPI @ :8000)| +------------------+ +--------+---------+ | +------------------------+------------------------+ | | | +--------v---------+ +--------v---------+ +--------v---------+ | File Storage | | Vector DB | | Audit Log | | (./storage) | | (Chroma @ ./db) | | (SQLite DB) | +------------------+ +------------------+ +------------------+ ``` </pre>
+<pre> ```mermaid flowchart LR FE[Frontend UI<br/>(React @ :3000)] --> BE[Backend API<br/>(FastAPI @ :8000)] BE --> FS[File Storage (./storage)] BE --> DB[Vector DB (Chroma @ ./db)] BE --> AL[Audit Log (SQLite DB)] ``` </pre>
 
 
 ### Key Features
