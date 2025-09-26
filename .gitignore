@@ -1,0 +1,31 @@
+# Python
+pycache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+env/
+
+# Database
+*.sqlite3
+kaas.db
+kaas.db-journal
+
+# Logs
+*.log
+
+# Storage
+storage/
+chroma_db/
+
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/.DS_Store
+
+# IDE
+.vscode/
+.idea/
