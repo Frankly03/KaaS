@@ -1,5 +1,5 @@
 # Python
-pycache/
+# ---------------------------------
 __pycache__/
 *.pyc
 *.pyo
@@ -9,23 +9,37 @@ __pycache__/
 venv/
 env/
 
+# Testing
+# ---------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+
 # Database
+# ---------------------------------
 *.sqlite3
 kaas.db
 kaas.db-journal
 
 # Logs
+# ---------------------------------
 *.log
 
 # Storage
+# ---------------------------------
 storage/
 chroma_db/
 
 # Frontend
+# ---------------------------------
 frontend/node_modules/
 frontend/build/
-frontend/.DS_Store
+frontend/dist/
+frontend/.env.local
 
-# IDE
+# IDE & OS Specific
+# ---------------------------------
 .vscode/
 .idea/
+.DS_Store
+Thumbs.db

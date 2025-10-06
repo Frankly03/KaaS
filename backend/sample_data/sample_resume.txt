@@ -1,0 +1,28 @@
+Alex Doe
+Software Engineer
+alex.doe@email.com | (123) 456-7890 | linkedin.com/in/alexdoe
+
+Summary
+A highly motivated and detail-oriented Software Engineer with 5+ years of experience in developing, testing, and deploying scalable web applications. Proficient in Python, Java, and modern JavaScript frameworks. Passionate about building elegant and efficient software solutions.
+
+Experience
+
+Senior Software Engineer | Innovatech Solutions | San Francisco, CA | June 2021 - Present
+- Led the development of a microservices-based platform using Python (FastAPI) and Docker, resulting in a 40% improvement in deployment frequency.
+- Designed and implemented a real-time data processing pipeline with Kafka and PostgreSQL.
+- Mentored junior engineers and conducted code reviews to maintain high code quality.
+
+Software Engineer | TechGen Corp. | Austin, TX | July 2018 - May 2021
+- Developed and maintained customer-facing features for a large-scale SaaS product using Java (Spring Boot) and React.
+- Wrote unit and integration tests, increasing code coverage by 25%.
+- Collaborated with product managers to define feature requirements and timelines.
+
+Education
+Bachelor of Science in Computer Science
+State University, Anytown, USA | Graduated May 2018
+
+Skills
+- Languages: Python, Java, JavaScript, SQL
+- Frameworks: FastAPI, Spring Boot, React, Node.js
+- Tools: Docker, Kubernetes, Git, Jenkins, Kafka
+- Databases: PostgreSQL, MongoDB, Redis

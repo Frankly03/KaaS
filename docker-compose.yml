@@ -1,8 +1,9 @@
-version: '3.8'
-
 services:
   backend:
-    build: ./backend
+    build: 
+      context: .
+      dockerfile: ./backend/Dockerfile
+
     container_name: kaas_backend
     ports:
       - "${PORT:-8000}:8000"
@@ -17,10 +18,9 @@ services:
 
   frontend:
     build: ./frontend
+    
     container_name: kaas_frontend
     ports:
       - "3000:80"
     depends_on:
       - backend
-
-volumes: {}
