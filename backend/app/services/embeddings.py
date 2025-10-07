@@ -1,9 +1,14 @@
 from sentence_transformers import SentenceTransformer
 from typing import List
 from ..config import settings
+import os
+import torch
 
 # Load the model only once when the module is imported
 # This is a relatively small model, so it's fine to load at startup.
+
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+torch.set_num_threads(1)
 
 try:
     model = SentenceTransformer(settings.EMBEDDING_MODEL)
