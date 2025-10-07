@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+python-dotenv
+python-multipart
+sqlalchemy
+chromadb
+sentence-transformers
+pymupdf
+groq
+# For HF Fallback
+transformers[torch]
+accelerate
+langchain-core
