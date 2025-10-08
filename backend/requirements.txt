@@ -1,11 +1,11 @@
 fastapi
 uvicorn[standard]
+gunicorn
 pydantic-settings
 python-dotenv
 python-multipart
 sqlalchemy
 chromadb
-langchain-core
+sentence-transformers
 pymupdf
 groq
-sentence-transformers
