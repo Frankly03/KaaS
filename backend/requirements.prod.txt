@@ -9,4 +9,3 @@ chromadb
 sentence-transformers
 pymupdf
 groq
-

@@ -13,7 +13,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Now copy the rest of your application code
 COPY ./app /app/app
-COPY ./sample_data /app/sample_data
 
 # EXPOSE is good for documentation
 EXPOSE 8000
