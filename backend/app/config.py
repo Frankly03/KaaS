@@ -1,12 +1,21 @@
+import os
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# --- NEW: Define a base directory for all app data ---
+# This makes it easy to manage paths inside the container.
+APP_DIR = "/app"
 
 class Settings(BaseSettings):
     # Backend settings
     PORT: int = 8000
-    DATABASE_URL: str = "sqlite:///./kaas.db"
+    
+    # --- UPDATED: Use absolute paths derived from APP_DIR ---
+    # The environment variable from Render will override this default.
+    DATABASE_URL: str = f"sqlite:///{os.path.join(APP_DIR, 'kaas.db')}"
 
     # Vector store settings
-    CHROMA_DB_DIR: str = "./chroma_db"
+    # The environment variable from Render will override this default.
+    CHROMA_DB_DIR: str = os.path.join(APP_DIR, "chroma_db")
 
     # Generation settings
     GROQ_API_KEY: str = ""
@@ -23,5 +32,6 @@ class Settings(BaseSettings):
 
 settings = Settings()
 
-# # For Debugging
-# print(f"--- DEBUG: GROQ_API_KEY from settings is: '{settings.GROQ_API_KEY}'---")
+# --- THE FIX: Create the vector store directory if it doesn't exist ---
+# This code runs once when the application starts.
+os.makedirs(settings.CHROMA_DB_DIR, exist_ok=True)
