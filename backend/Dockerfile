@@ -1,24 +1,23 @@
-# Use an official Python runtime as a parent image
+# Use the official Python runtime as a parent image
 FROM python:3.11-slim
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Best Practice: Copy only the requirements file first to leverage Docker's build cache.
-COPY ./requirements.txt /app/requirements.txt
+# Create a non-root user for security best practices
+RUN useradd -ms /bin/bash streamlit
+USER streamlit
 
-# Install production dependencies
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+# Copy the requirements file and install dependencies as the non-root user
+COPY --chown=streamlit:streamlit requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
 
-# Now copy the rest of your application code
-COPY ./app /app/app
+# Copy the rest of the application files
+COPY --chown=streamlit:streamlit . .
 
-# EXPOSE is good for documentation
-EXPOSE 8000
+# Expose the port that Streamlit runs on
+EXPOSE 8501
 
-# --- THE FINAL FIX IS HERE ---
-# Use the "shell form" for variable substitution.
-# Add the --preload flag to load the model once, before workers start.
-# Start with just one worker to be safe on the free tier.
-CMD gunicorn -w 1 -k uvicorn.workers.UvicornWorker --preload app.main:app --bind 0.0.0.0:$PORT
+# The command to run the Streamlit app
+# The --server.runOnSave=true flag is helpful for development
+CMD ["python", "-m", "streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]

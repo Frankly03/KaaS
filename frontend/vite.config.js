@@ -5,12 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true,
-    port: 3000, // Explicitly set the port to 3000
+    port: 3000,
     proxy: {
-      // Proxy API requests to the backend server
       '/api': {
-        target: 'http://backend:8000',
+        // --- THIS IS THE FIX ---
+        // For local development and preview, we must target the local IP address.
+        // The 'http://backend:8000' target is only for when the app is running inside Docker Compose.
+        target: 'http://127.0.0.1:8000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
