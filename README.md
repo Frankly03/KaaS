@@ -1,6 +1,29 @@
 # KnowledgeOps as a Service (KaaS) Project 🚀
 
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-ready-blue?logo=docker)](https://www.docker.com/)
+[![LangChain](https://img.shields.io/badge/LangChain-Integration-yellow)](https://www.langchain.com/)
+
 This is a minimal but realistic implementation of a "Knowledge as a Service" system, often called Retrieval-Augmented Generation (RAG). It allows you to upload documents (PDFs/TXTs) and ask questions about their content.
+
+---
+
+## 🔮 Roadmap
+- [x] Phase 1: Core RAG API ✅ *(Document ingestion, chunking, embeddings, retrieval pipeline)*
+- [x] Phase 2: Platform & Ingestors *(Frontend + Multi-format ingestion – current stage)*
+- [ ] Phase 3: Intelligence Layer *(Agentic querying, reasoning chains, self-improvement loop)*
+- [ ] Phase 4: MLOps Polish *(Monitoring, logging, evaluation, deployment automation)*
+
+---
+
+## 🧭 Next Phase: What's Coming
+As the next step, I’ll be expanding the **Intelligence Layer** by integrating:
+- Multi-agent orchestration (LangGraph or CrewAI)
+- Knowledge routing and contextual summarization
+- Experiment tracking via MLflow or LangSmith
+- API gateway for external integrations
+
+---
 
 It uses a modern stack: Python FastAPI for the backend, React for the frontend, and Chroma for vector storage.
 
@@ -19,8 +42,7 @@ The system is composed of three main services orchestrated by Docker Compose:
 * **Generative Answers**: Uses Groq's LPU Inference Engine for fast answers or falls back to a local Hugging Face model (`flan-t5-base`).
 * **Source Citing**: Answers include citations pointing to the exact source document and text snippet.
 * **Simple & Local-First**: Runs entirely on your machine with Docker Compose. No GPU required for the fallback model.
-
----
+  
 
 ## ⚙️ Setup & Running Locally
 
