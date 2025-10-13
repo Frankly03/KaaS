@@ -9,3 +9,5 @@ chromadb
 sentence-transformers
 pymupdf
 groq
+langchain
+streamlit

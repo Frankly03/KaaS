@@ -1,5 +1,6 @@
 fastapi
 uvicorn[standard]
+gunicorn
 pydantic-settings
 python-dotenv
 python-multipart
@@ -8,7 +9,5 @@ chromadb
 sentence-transformers
 pymupdf
 groq
-# For HF Fallback
-transformers[torch]
-accelerate
 langchain-core
+streamlit

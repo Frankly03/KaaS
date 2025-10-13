@@ -103,7 +103,7 @@ def reset_system(db_session: Session = Depends(db.get_db)):
         print(f"Error during system reset: {e}")
         raise HTTPException(status_code=500, detail="Failed to reset system.")
 
-@app.get("/health", tags=["Health Check"])
+@app.get("/", tags=["Health Check"])
 def read_root():
     """Health check endpoint."""
     return {"status": "ok", "message": "Welcome to KaaS API!"}
