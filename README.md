@@ -42,6 +42,66 @@ The system is composed of three main services orchestrated by Docker Compose:
 * **Generative Answers**: Uses Groq's LPU Inference Engine for fast answers or falls back to a local Hugging Face model (`flan-t5-base`).
 * **Source Citing**: Answers include citations pointing to the exact source document and text snippet.
 * **Simple & Local-First**: Runs entirely on your machine with Docker Compose. No GPU required for the fallback model.
+
+
+---
+
+## 🔹Results
+
+![Screenshot of UI](result-image/0.png)
+
+
+
+
+![Screenshot of UI](result-image/1.png)
+
+
+ 
+
+![Screenshot of UI](result-image/2.png)
+
+
+
+
+![Screenshot of UI](result-image/3.png)
+
+
+
+
+![Screenshot of UI](result-image/4.png)
+
+
+ 
+
+![Screenshot of UI](result-image/5.png)
+
+
+
+
+![Screenshot of UI](result-image/6.png)
+
+
+
+
+![Screenshot of UI](result-image/7.png)
+
+
+
+
+![Screenshot of UI](result-image/8.png)
+
+
+
+
+![Screenshot of UI](result-image/9.png)
+
+
+
+
+![Screenshot of UI](result-image/10.png)
+
+
+---
   
 
 ## ⚙️ Setup & Running Locally
